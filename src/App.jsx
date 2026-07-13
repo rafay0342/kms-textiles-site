@@ -117,22 +117,22 @@ const metrics = [
 const whyCards = [
   {
     title: 'State-of-the-Art Manufacturing',
-    image: '/kms-v3/images/kms-figma-metric-banner.jpg',
+    image: '/images/kms-figma-metric-banner.jpg',
     text: 'Advanced lockstitch, overlock, flatlock, two-needle, bartack, snap-button, and steam-press systems engineered for precision.',
   },
   {
     title: 'Export-Focused Production',
-    image: '/kms-v3/images/kms-figma-cta.jpg',
+    image: '/images/kms-figma-cta.jpg',
     text: 'Garments manufactured to international standards for global brands, buying houses, importers, and sourcing partners.',
   },
   {
     title: 'Rigorous Quality Assurance',
-    image: '/kms-v3/images/kms-figma-feature.jpg',
+    image: '/images/kms-figma-feature.jpg',
     text: 'Multiple inspection checkpoints, dedicated audit procedures, and final pre-dispatch verification support every order.',
   },
   {
     title: 'Scalable Manufacturing Capacity',
-    image: '/kms-v3/images/kms-figma-promo-b.jpg',
+    image: '/images/kms-figma-promo-b.jpg',
     text: 'A facility designed to support growing brands and large-volume production programmes up to 125,000+ garments per month.',
   },
 ];
@@ -140,7 +140,7 @@ const whyCards = [
 const productCards = [
   {
     title: 'Knits Division',
-    image: '/kms-v3/images/kms-product-knits.jpg',
+    image: '/images/kms-product-knits.jpg',
     dark: true,
     price: 'Manufactured for global markets',
     rows: [
@@ -151,7 +151,7 @@ const productCards = [
   },
   {
     title: 'Denim & Non-Denim Division',
-    image: '/kms-v3/images/kms-product-denim.jpg',
+    image: '/images/kms-product-denim.jpg',
     price: 'Custom apparel styles',
     rows: [
       ['Garments', 'Jackets, Trousers, Shirts, Shorts, Skirts'],
@@ -164,7 +164,7 @@ const productCards = [
 const fabricGroups = [
   {
     title: 'Specialised Knit Fabrics',
-    image: '/kms-v3/images/kms-product-activewear.jpg',
+    image: '/images/kms-product-activewear.jpg',
     price: 'The foundation of every great garment',
     rows: [
       ['Classic knits', 'Single Jersey, Interlock, Pique'],
@@ -174,7 +174,7 @@ const fabricGroups = [
   },
   {
     title: 'Fabric Expertise',
-    image: '/kms-v3/images/kms-product-home.jpg',
+    image: '/images/kms-product-home.jpg',
     price: 'Sourcing and development',
     rows: [
       ['Natural base', '100% Cotton and Cotton-Polyester Blends'],

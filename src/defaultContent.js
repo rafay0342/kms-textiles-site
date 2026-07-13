@@ -48,11 +48,11 @@ export const defaultSiteContent = {
     ],
     ctaLabel: 'Get in Touch',
     ctaHref: 'mailto:sales@kmstextiles.com',
-    image: '/kms-v3/images/kms-figma-hero.jpg',
+    image: '/images/kms-figma-hero.jpg',
     imageAlt: 'KMS Textiles manufacturing ecosystem',
   },
   metrics: {
-    image: '/kms-v3/images/kms-figma-metric-banner.jpg',
+    image: '/images/kms-figma-metric-banner.jpg',
     imageAlt: 'Textile cutting table and fabric rolls',
     items: [
       { value: 125000, start: 110000, step: 2500, suffix: '+', label: 'Garments / Month' },
@@ -71,25 +71,25 @@ export const defaultSiteContent = {
     cards: [
       {
         title: 'State-of-the-Art Manufacturing',
-        image: '/kms-v3/images/kms-figma-metric-banner.jpg',
+        image: '/images/kms-figma-metric-banner.jpg',
         text:
           'Advanced lockstitch, overlock, flatlock, two-needle, bartack, snap-button, and steam-press systems engineered for precision.',
       },
       {
         title: 'Export-Focused Production',
-        image: '/kms-v3/images/kms-figma-cta.jpg',
+        image: '/images/kms-figma-cta.jpg',
         text:
           'Garments manufactured to international standards for global brands, buying houses, importers, and sourcing partners.',
       },
       {
         title: 'Rigorous Quality Assurance',
-        image: '/kms-v3/images/kms-figma-feature.jpg',
+        image: '/images/kms-figma-feature.jpg',
         text:
           'Multiple inspection checkpoints, dedicated audit procedures, and final pre-dispatch verification support every order.',
       },
       {
         title: 'Scalable Manufacturing Capacity',
-        image: '/kms-v3/images/kms-figma-promo-b.jpg',
+        image: '/images/kms-figma-promo-b.jpg',
         text:
           'A facility designed to support growing brands and large-volume production programmes up to 125,000+ garments per month.',
       },
@@ -101,7 +101,7 @@ export const defaultSiteContent = {
         eyebrow: 'About Us',
         title: 'Where Institutional Strength Meets Manufacturing Excellence',
         text: '',
-        image: '/kms-v3/images/kms-figma-promo-a.jpg',
+        image: '/images/kms-figma-promo-a.jpg',
         imageAlt: 'Apparel development and sampling table',
         ctaLabel: 'Our Facilities',
         ctaHref: '#facilities',
@@ -111,7 +111,7 @@ export const defaultSiteContent = {
         title: 'Manufactured for\nGlobal Markets',
         text:
           'KMS Textiles offers a versatile product portfolio across knitwear, denim, and non-denim categories, with full customisation available for sizing, colours, fabrics, and branding.',
-        image: '/kms-v3/images/kms-figma-promo-b.jpg',
+        image: '/images/kms-figma-promo-b.jpg',
         imageAlt: 'Production and dispatch ready textile facility',
         ctaLabel: 'Our Products',
         ctaHref: '#products',
@@ -127,7 +127,7 @@ export const defaultSiteContent = {
       'Our approach is founded on precision, consistency, and partnership. We do not simply produce garments; we build manufacturing confidence through disciplined processes, advanced technology, and an unwavering commitment to quality.',
     ],
     side: {
-      image: '/kms-v3/images/kms-figma-metric-banner.jpg',
+      image: '/images/kms-figma-metric-banner.jpg',
       imageAlt: 'KMS Textiles production planning and fabric preparation',
       title: 'From fabric inspection to final packaging.',
       text:
@@ -135,7 +135,7 @@ export const defaultSiteContent = {
     },
   },
   facilities: {
-    image: '/kms-v3/images/kms-figma-feature.jpg',
+    image: '/images/kms-figma-feature.jpg',
     imageAlt: 'Quality assurance table with garments and textile tools',
     title: 'Built for Precision\nDesigned for Scale.',
     text:
@@ -179,7 +179,7 @@ export const defaultSiteContent = {
     cards: [
       {
         title: 'Knits Division',
-        image: '/kms-v3/images/kms-product-knits.jpg',
+        image: '/images/kms-product-knits.jpg',
         dark: true,
         price: 'Manufactured for global markets',
         rows: [
@@ -190,7 +190,7 @@ export const defaultSiteContent = {
       },
       {
         title: 'Denim & Non-Denim Division',
-        image: '/kms-v3/images/kms-product-denim.jpg',
+        image: '/images/kms-product-denim.jpg',
         price: 'Custom apparel styles',
         rows: [
           ['Garments', 'Jackets, Trousers, Shirts, Shorts, Skirts'],
@@ -209,7 +209,7 @@ export const defaultSiteContent = {
     cards: [
       {
         title: 'Specialised Knit Fabrics',
-        image: '/kms-v3/images/kms-product-activewear.jpg',
+        image: '/images/kms-product-activewear.jpg',
         price: 'The foundation of every great garment',
         rows: [
           ['Classic knits', 'Single Jersey, Interlock, Pique'],
@@ -219,7 +219,7 @@ export const defaultSiteContent = {
       },
       {
         title: 'Fabric Expertise',
-        image: '/kms-v3/images/kms-product-home.jpg',
+        image: '/images/kms-product-home.jpg',
         price: 'Sourcing and development',
         rows: [
           ['Natural base', '100% Cotton and Cotton-Polyester Blends'],
@@ -233,7 +233,7 @@ export const defaultSiteContent = {
     title: "Let's Build Something Exceptional Together",
     text:
       'Whether you are developing a new collection, scaling an existing programme, or exploring a long-term manufacturing partnership, KMS Textiles is ready to support your production requirements with precision, reliability, and uncompromising quality.',
-    image: '/kms-v3/images/kms-figma-cta.jpg',
+    image: '/images/kms-figma-cta.jpg',
     imageAlt: 'Export-ready textile production floor',
     buttonLabel: 'Get in Touch',
     buttonHref: 'mailto:sales@kmstextiles.com',
