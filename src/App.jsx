@@ -1,7 +1,8 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { ArrowRight, Cog, Globe2, Layers3, Mail, Menu, MessageSquareText, ShieldCheck, X } from 'lucide-react';
+import { ArrowRight, Cog, Facebook, Globe2, Instagram, Layers3, Mail, Menu, MessageSquareText, ShieldCheck, X } from 'lucide-react';
 import { CmsPanel } from './CmsPanel.jsx';
-import { KmsLogoMark } from './KmsLogoMark.jsx';
+import { KmsLogoMark } from './logo';
+import { ChatWidget } from './ChatWidget.jsx';
 import { defaultSiteContent } from './defaultContent.js';
 
 const CMS_STORAGE_KEY = 'kms-textiles-local-cms-v1';
@@ -116,22 +117,22 @@ const metrics = [
 const whyCards = [
   {
     title: 'State-of-the-Art Manufacturing',
-    image: '/images/kms-figma-metric-banner.jpg',
+    image: '/kms-v3/images/kms-figma-metric-banner.jpg',
     text: 'Advanced lockstitch, overlock, flatlock, two-needle, bartack, snap-button, and steam-press systems engineered for precision.',
   },
   {
     title: 'Export-Focused Production',
-    image: '/images/kms-figma-cta.jpg',
+    image: '/kms-v3/images/kms-figma-cta.jpg',
     text: 'Garments manufactured to international standards for global brands, buying houses, importers, and sourcing partners.',
   },
   {
     title: 'Rigorous Quality Assurance',
-    image: '/images/kms-figma-feature.jpg',
+    image: '/kms-v3/images/kms-figma-feature.jpg',
     text: 'Multiple inspection checkpoints, dedicated audit procedures, and final pre-dispatch verification support every order.',
   },
   {
     title: 'Scalable Manufacturing Capacity',
-    image: '/images/kms-figma-promo-b.jpg',
+    image: '/kms-v3/images/kms-figma-promo-b.jpg',
     text: 'A facility designed to support growing brands and large-volume production programmes up to 125,000+ garments per month.',
   },
 ];
@@ -139,7 +140,7 @@ const whyCards = [
 const productCards = [
   {
     title: 'Knits Division',
-    image: '/images/kms-product-knits.jpg',
+    image: '/kms-v3/images/kms-product-knits.jpg',
     dark: true,
     price: 'Manufactured for global markets',
     rows: [
@@ -150,7 +151,7 @@ const productCards = [
   },
   {
     title: 'Denim & Non-Denim Division',
-    image: '/images/kms-product-denim.jpg',
+    image: '/kms-v3/images/kms-product-denim.jpg',
     price: 'Custom apparel styles',
     rows: [
       ['Garments', 'Jackets, Trousers, Shirts, Shorts, Skirts'],
@@ -163,7 +164,7 @@ const productCards = [
 const fabricGroups = [
   {
     title: 'Specialised Knit Fabrics',
-    image: '/images/kms-product-activewear.jpg',
+    image: '/kms-v3/images/kms-product-activewear.jpg',
     price: 'The foundation of every great garment',
     rows: [
       ['Classic knits', 'Single Jersey, Interlock, Pique'],
@@ -173,7 +174,7 @@ const fabricGroups = [
   },
   {
     title: 'Fabric Expertise',
-    image: '/images/kms-product-home.jpg',
+    image: '/kms-v3/images/kms-product-home.jpg',
     price: 'Sourcing and development',
     rows: [
       ['Natural base', '100% Cotton and Cotton-Polyester Blends'],
@@ -256,10 +257,11 @@ function scrollTo(event, id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+const LOGO_LOOP = { inline: true, intro: false, footer: false };
 function AnimatedLogo({ variant = 'inline' }) {
   return (
     <span className={`animated-logo animated-logo--${variant}`}>
-      <KmsLogoMark variant={variant} />
+      <KmsLogoMark loop={LOGO_LOOP[variant] ?? false} durationSeconds={5} />
     </span>
   );
 }
@@ -428,10 +430,11 @@ function App() {
 
   const navItems = content.nav || [];
   const contact = content.contact || defaultSiteContent.contact;
-  const contactRailLinks = (contact.railLinks || []).map((item) => ({
-    ...item,
-    icon: contactIconMap[item.icon] || Mail,
-  }));
+  const contactRailLinks = [
+    { label: 'Mail', href: 'mailto:sales@kmstextiles.com', icon: Mail },
+    { label: 'Facebook', href: 'https://facebook.com/kmstextiles', icon: Facebook, external: true },
+    { label: 'Instagram', href: 'https://instagram.com/kmstextiles', icon: Instagram, external: true },
+  ];
   const heroBullets =
     content.hero.bullets?.length > 0
       ? content.hero.bullets
@@ -443,6 +446,8 @@ function App() {
 
   return (
     <main className="zandora-shell">
+      <LogoIntro />
+      <ChatWidget />
       {isLocalCms && (
         <a className="cms-entry-button" href="#cms" onClick={() => setCmsOpen(true)}>
           CMS
