@@ -1768,19 +1768,43 @@ button {
     padding-bottom: 76px;
   }
 
-  /* Keep the social strip on the right side (as before), but attach it to
-     the page scroll instead of floating fixed in front of the content.
-     position:absolute anchors it to the shell so it scrolls away with the
-     page, and the low z-index keeps it behind the hero content rather than
-     overlapping on top of it. */
   .social-rail {
-    position: absolute !important;
-    top: 340px !important;
-    right: 6px !important;
-    bottom: auto !important;
-    left: auto !important;
-    transform: none !important;
-    z-index: 1 !important;
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 14px;
+    flex-direction: row;
+    gap: 8px;
+    max-width: calc(100vw - 28px);
+    padding: 8px;
+    border: 1px solid rgba(48, 58, 49, 0.14);
+    border-radius: 999px;
+    background: rgba(246, 244, 238, 0.9);
+    box-shadow: 0 18px 44px rgba(32, 38, 31, 0.14);
+    backdrop-filter: blur(18px);
+    transform: translateX(-50%);
+    animation: mobile-rail-intro 700ms ease 420ms both;
+  }
+
+  .social-rail::before,
+  .social-rail::after,
+  .social-rail-label,
+  .social-rail-handle {
+    display: none;
+  }
+
+  .social-rail-link {
+    width: auto;
+    min-width: 74px;
+    min-height: 42px;
+    padding: 0 12px;
+    border-color: transparent;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .social-rail-link:hover {
+    transform: translateY(-2px);
   }
 
   .figma-header {
@@ -2290,42 +2314,55 @@ button {
 }
 
 
-/* --- Desktop floating rail: icon-only circles anchored to the right edge.
-   Scoped to >860px so it never floats over content on mobile/tablet, where
-   the social links move into the header menu instead (.figma-nav-social). --- */
-@media (min-width: 861px) {
+/* --- FINAL rail override: force perfect icon-only circles (kills remote min-width oval) --- */
+.social-rail { position: fixed !important; right: 12px !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 60; display: flex !important; flex-direction: column !important; align-items: center !important; gap: 9px !important; width: auto !important; }
+.social-rail-label, .social-rail-text, .social-rail-handle { display: none !important; }
+.social-rail-link {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  max-width: 34px !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(48,58,49,.2) !important;
+  background: rgba(246,244,238,.9) !important;
+  box-shadow: 0 8px 20px rgba(32,38,31,.1) !important;
+}
+
+
+
+/* --- rail container: kill remote's mobile pill visuals at every width --- */
+.social-rail {
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  max-width: none !important;
+}
+@media (max-width: 640px) {
+  /* anchor bottom-right above the WhatsApp button — clear of headings */
+  .social-rail { right: 14px !important; top: auto !important; bottom: 96px !important; transform: none !important; gap: 8px !important; }
+  .social-rail-link { width: 30px !important; height: 30px !important; min-width: 30px !important; min-height: 30px !important; max-width: 30px !important; }
+  .social-rail-link svg { width: 13px; height: 13px; }
+}
+
+/* --- Mobile placement only: keep the original rail (icons, sizes, design)
+   but attach it to the page scroll on the side instead of floating fixed in
+   front of the content. position:absolute makes it scroll away with the page;
+   everything else (icon design, functionality) stays as before. --- */
+@media (max-width: 860px) {
   .social-rail {
-    position: fixed !important;
-    right: 12px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    z-index: 60;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 9px !important;
-    width: auto !important;
-    padding: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    max-width: none !important;
-  }
-  .social-rail-label, .social-rail-text, .social-rail-handle { display: none !important; }
-  .social-rail-link {
-    width: 34px !important;
-    height: 34px !important;
-    min-width: 34px !important;
-    min-height: 34px !important;
-    max-width: 34px !important;
-    padding: 0 !important;
-    gap: 0 !important;
-    border-radius: 50% !important;
-    border: 1px solid rgba(48,58,49,.2) !important;
-    background: rgba(246,244,238,.9) !important;
-    box-shadow: 0 8px 20px rgba(32,38,31,.1) !important;
+    position: absolute !important;
+    top: 340px !important;
+    right: 6px !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 1 !important;
   }
 }
