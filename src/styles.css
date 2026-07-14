@@ -2351,18 +2351,30 @@ button {
   .social-rail-link svg { width: 13px; height: 13px; }
 }
 
-/* --- Mobile placement only: keep the original rail (icons, sizes, design)
-   but attach it to the page scroll on the side instead of floating fixed in
-   front of the content. position:absolute makes it scroll away with the page;
-   everything else (icon design, functionality) stays as before. --- */
+/* --- Mobile rail: on small screens the hero text spans full width, so the
+   rail is placed over the hero image on the right side (clear of the text),
+   attached to the page scroll. Icons sized a touch larger for touch, kept
+   proportional to their circle. --- */
 @media (max-width: 860px) {
   .social-rail {
     position: absolute !important;
-    top: 340px !important;
-    right: 6px !important;
+    top: 1000px !important;
+    right: 16px !important;
     bottom: auto !important;
     left: auto !important;
     transform: none !important;
-    z-index: 1 !important;
+    gap: 12px !important;
+    z-index: 20 !important;
+  }
+  .social-rail-link {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    max-width: 42px !important;
+  }
+  .social-rail-link svg {
+    width: 19px !important;
+    height: 19px !important;
   }
 }
