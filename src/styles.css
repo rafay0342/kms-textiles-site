@@ -2345,7 +2345,8 @@ button {
   max-width: none !important;
 }
 @media (max-width: 640px) {
-  .social-rail { right: 8px !important; gap: 8px !important; }
+  /* anchor bottom-right above the WhatsApp button — clear of headings */
+  .social-rail { right: 14px !important; top: auto !important; bottom: 96px !important; transform: none !important; gap: 8px !important; }
   .social-rail-link { width: 30px !important; height: 30px !important; min-width: 30px !important; min-height: 30px !important; max-width: 30px !important; }
   .social-rail-link svg { width: 13px; height: 13px; }
 }
