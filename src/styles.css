@@ -229,12 +229,6 @@ button {
   color: var(--ink);
 }
 
-/* Social links live in the floating rail on desktop; hidden here and only
-   revealed inside the mobile header menu. */
-.figma-nav-social {
-  display: none;
-}
-
 .header-link {
   margin-left: auto;
   padding-bottom: 4px;
@@ -1774,12 +1768,19 @@ button {
     padding-bottom: 76px;
   }
 
-  /* On mobile the floating rail overlaps hero content, so it is hidden here
-     and the social links are surfaced inside the header menu instead
-     (see .figma-nav-social). !important defeats the unconditional
-     display:flex rules that appear later in this file. */
+  /* Keep the social strip on the right side (as before), but attach it to
+     the page scroll instead of floating fixed in front of the content.
+     position:absolute anchors it to the shell so it scrolls away with the
+     page, and the low z-index keeps it behind the hero content rather than
+     overlapping on top of it. */
   .social-rail {
-    display: none !important;
+    position: absolute !important;
+    top: 340px !important;
+    right: 6px !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 1 !important;
   }
 
   .figma-header {
@@ -1813,36 +1814,6 @@ button {
   .figma-nav a {
     padding: 12px 0;
     font-size: 18px;
-  }
-
-  .figma-nav-social {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 6px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .figma-nav-social-link {
-    width: 44px;
-    height: 44px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: 1px solid rgba(48, 58, 49, 0.2);
-    border-radius: 50%;
-    color: var(--brand-deep);
-    background: rgba(246, 244, 238, 0.85);
-    transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
-  }
-
-  .figma-nav-social-link:hover {
-    border-color: transparent;
-    background: var(--brand-deep);
-    color: var(--white);
   }
 
   .header-link {

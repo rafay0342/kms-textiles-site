@@ -490,23 +490,6 @@ function App() {
                 {item.label}
               </a>
             ))}
-            <div className="figma-nav-social" aria-label={contact.railLabel}>
-              {contactRailLinks.map((item) => {
-                const Icon = item.icon;
-                const linkProps = item.external ? { target: '_blank', rel: 'noreferrer' } : {};
-                return (
-                  <a
-                    className="figma-nav-social-link"
-                    href={item.href}
-                    key={item.label}
-                    aria-label={item.label}
-                    {...linkProps}
-                  >
-                    <Icon size={18} strokeWidth={1.8} />
-                  </a>
-                );
-              })}
-            </div>
           </nav>
           <a className="header-link" href={`mailto:${contact.email}`}>
             {contact.headerLabel}
