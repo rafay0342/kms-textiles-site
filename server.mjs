@@ -50,3 +50,11 @@ const server = createServer((request, response) => {
 server.listen(port, host, () => {
   console.log(`KMS Textiles server listening on ${host}:${port}`);
 });
+
+// Exit cleanly when the platform recycles the container so the shutdown
+// registers as a graceful stop (code 0) instead of a spurious failure.
+for (const signal of ['SIGTERM', 'SIGINT']) {
+  process.on(signal, () => {
+    server.close(() => process.exit(0));
+  });
+}
