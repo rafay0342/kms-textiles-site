@@ -2314,8 +2314,9 @@ button {
 }
 
 
-/* --- FINAL rail override: force perfect icon-only circles (kills remote min-width oval) --- */
-.social-rail { position: fixed !important; right: 12px !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 60; display: flex !important; flex-direction: column !important; align-items: center !important; gap: 9px !important; width: auto !important; }
+/* --- FINAL rail override: force perfect icon-only circles (kills remote min-width oval).
+   Page-anchored (absolute, not fixed) so the rail scrolls away with the content. --- */
+.social-rail { position: absolute !important; right: 12px !important; top: 50vh !important; transform: translateY(-50%) !important; z-index: 60; display: flex !important; flex-direction: column !important; align-items: center !important; gap: 9px !important; width: auto !important; }
 .social-rail-label, .social-rail-text, .social-rail-handle { display: none !important; }
 .social-rail-link {
   width: 34px !important;
