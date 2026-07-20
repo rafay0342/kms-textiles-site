@@ -17,6 +17,7 @@ const mimeTypes = {
   '.jpg': 'image/jpeg',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.pdf': 'application/pdf',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
   '.webp': 'image/webp',
@@ -39,7 +40,12 @@ function safePath(urlPath) {
 function serveFile(response, filePath) {
   const extension = extname(filePath).toLowerCase();
   response.writeHead(200, {
-    'Cache-Control': extension === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable',
+    // .html and .pdf live at stable, unhashed URLs, so they must revalidate;
+    // everything else under dist/ is content-hashed and safe to cache forever.
+    'Cache-Control':
+      extension === '.html' || extension === '.pdf'
+        ? 'no-cache'
+        : 'public, max-age=31536000, immutable',
     'Content-Type': mimeTypes[extension] || 'application/octet-stream',
   });
   // pipeline (unlike .pipe) tears down both streams when either side fails,
